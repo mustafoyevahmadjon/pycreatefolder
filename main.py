@@ -11,7 +11,11 @@ def create_folder_and_files():
     file_prefix = input("Fayl nomlari uchun prefiksni kiriting (masalan, 'begin'): ")
 
     # Fayl kengaytmasini so'raymiz (masalan, .py, .txt)
-    file_extension = input("Fayl kengaytmasini kiriting (masalan, '.py', '.txt'): ")
+    file_extension = input("Fayl kengaytmasini kiriting (masalan, 'py', 'txt'): ")
+    
+    # Fayl kengaytmasini "." bilan to'ldiramiz, agar kerak bo'lsa
+    if not file_extension.startswith('.'):
+        file_extension = f".{file_extension}"
 
     # Papkani yaratamiz, agar mavjud bo'lmasa
     if not os.path.exists(folder_name):
